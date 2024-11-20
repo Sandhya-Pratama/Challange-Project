@@ -1,0 +1,6 @@
+code,name,description,model,tech,status
+rv1,Rover #1,"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",mobil,"kecerdasan buatan,mobil",progress
+tfx,Transformer X,"lorem ipsum dolor sit amet",transformation,"mobil, robot",active
+px1,Pacifista 1,"lorem ipsum dolor sit amet",humanoid,"kecerdasan buatan, robot",active
+ax8,Android #8,"laboreorem ipsum dolor sit amet",humanoid,"cyborg",active
+ax7,Android #7,"lorem ipsum dolor sit amet",humanoid,"cybord",inactive
