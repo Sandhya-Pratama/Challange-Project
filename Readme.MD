@@ -8,7 +8,7 @@ Untuk menjalankan proyek, jalankan perintah berikut di terminal:
 
 ```bash
 go run main.go
-
+```
 ---
 
 ### **Endpoint of the Project**
