@@ -26,6 +26,15 @@ func GetDataByCode(w http.ResponseWriter, r *http.Request) {
 
 func FilterData(w http.ResponseWriter, r *http.Request) {
 	model := r.URL.Query().Get("model")
+	if model != "mobil" {
+		views.ErrorResponse(w, "Coba pilih model berikut ini : humanoid, cyborg, mobil", http.StatusBadRequest)
+	}
+	// else if model != "humanoid" {
+	// 	views.ErrorResponse(w, "Coba pilih model berikut ini : humanoid, cyborg, mobil", http.StatusBadRequest)
+	// } else if model != "cyborg" {
+	// 	views.ErrorResponse(w, "Coba pilih model berikut ini : humanoid, cyborg, mobil", http.StatusBadRequest)
+	// }
+
 	tech := r.URL.Query().Get("tech")
 	data := services.FilterData(model, tech)
 	views.JSONResponse(w, data)

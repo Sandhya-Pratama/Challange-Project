@@ -2,6 +2,7 @@ package services
 
 import (
 	"errors"
+	"fmt"
 
 	"strings"
 
@@ -27,6 +28,9 @@ func GetDataByCode(code string) (models.Data, error) {
 	return models.Data{}, errors.New("data not found")
 }
 
+// data bisa difilter lebih dari 1 dari tech
+// validasi bisa ditambahkan untuk imput kode hanya boleh alfabet, angka, # dengan panjang karakter maksimal 15
+// buat model referensi, kalau input diluar referensi maka akan ditolak
 func FilterData(model, tech string) []models.Data {
 	var filtered []models.Data
 	techFilters := strings.Split(tech, ",")
@@ -44,6 +48,10 @@ func FilterData(model, tech string) []models.Data {
 
 		if matchesModel && matchesTech {
 			filtered = append(filtered, d)
+		}
+
+		if matchesModel && !matchesTech {
+			fmt.Println("modtidak tersedia, silahkan coba untuk ")
 		}
 	}
 	return filtered
